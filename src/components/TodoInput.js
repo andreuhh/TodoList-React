@@ -22,9 +22,14 @@ export default class TodoInput extends Component {
           </div>
           <button
             type="submit"
-            className="btn btn-block btn-primary mt-2 text-uppercase"
+            disabled={item ? false : true} // check if is empty
+            className={
+              editItem
+                ? 'btn btn-block btn-success my-3 text-uppercase'
+                : 'btn btn-block btn-primary mt-3 text-uppercase'
+            }
           >
-            add item
+            {editItem ? 'edit item' : ' add item'}
           </button>
         </form>
       </div>
